@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>ImmunityPlus Dashboard</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial;
+}
+
+body{
+    background:#f5f7fb;
+}
+
+/* NAVBAR */
+
+.navbar{
+
+    width:100%;
+
+    height:90px;
+
+    background:white;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 60px;
+
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo{
+
+    font-size:32px;
+
+    font-weight:bold;
+
+    color:#0097b2;
+}
+
+.menu{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:35px;
+}
+
+.menu a{
+
+    text-decoration:none;
+
+    color:#222;
+
+    font-size:20px;
+
+    font-weight:bold;
+}
+
+.ai-icon{
+
+    width:55px;
+
+    height:55px;
+
+    border:2px solid #7b61ff;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#7b61ff;
+
+    font-size:20px;
+
+    font-weight:bold;
+}
+
+/* HERO SECTION */
+
+.hero{
+
+    width:100%;
+
+    height:420px;
+
+    background:#eef3fb;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:60px;
+}
+
+.left{
+
+    width:45%;
+}
+
+.left h1{
+
+    font-size:64px;
+
+    margin-bottom:25px;
+
+    color:#14213d;
+}
+
+.left p{
+
+    font-size:28px;
+
+    line-height:1.5;
+
+    color:#445;
+}
+
+.book-btn{
+
+    margin-top:35px;
+
+    padding:16px 32px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#0097b2;
+
+    color:white;
+
+    font-size:22px;
+
+    cursor:pointer;
+}
+
+.book-btn:hover{
+
+    background:#007a91;
+}
+
+.right img{
+
+    width:430px;
+}
+
+/* CARDS */
+
+.cards{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:40px;
+
+    padding:60px;
+}
+
+.card{
+
+    width:400px;
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:20px;
+
+    box-shadow:0 0 15px rgba(0,0,0,0.1);
+}
+
+.card-icon{
+
+    width:100px;
+
+    height:100px;
+
+    border-radius:50%;
+
+    background:#e9f1ff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:36px;
+
+    font-weight:bold;
+
+    color:#0097b2;
+
+    margin-bottom:25px;
+}
+
+.card h2{
+
+    font-size:34px;
+
+    margin-bottom:20px;
+}
+
+.card p{
+
+    font-size:22px;
+
+    line-height:1.5;
+
+    color:#555;
+
+    margin-bottom:30px;
+}
+
+.card button{
+
+    padding:15px 28px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#00b4d8;
+
+    color:white;
+
+    font-size:20px;
+
+    cursor:pointer;
+}
+
+.card button:hover{
+
+    background:#0096c7;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<div class="navbar">
+
+    <div class="logo">
+
+        ImmunityPlus
+
+    </div>
+
+    <div class="menu">
+
+        <a href="dashboard.html">Home</a>
+
+        <a href="booking.html">Book Slot</a>
+
+        <a href="viewbooking.jsp">View Booking</a>
+
+        <a href="index.html">Logout</a>
+
+        <a href="ai.html" class="ai-icon">
+
+            AI
+
+        </a>
+
+    </div>
+
+</div>
+
+<!-- HERO SECTION -->
+
+<div class="hero">
+
+    <div class="left">
+
+        <h1>Welcome!</h1>
+
+        <p>
+
+            Book your vaccination slot easily
+            and manage your healthcare safely.
+
+        </p>
+
+        <a href="booking.html">
+
+            <button class="book-btn">
+
+                Book Now
+
+            </button>
+
+        </a>
+
+    </div>
+
+    <div class="right">
+
+        <img src="https://cdn-icons-png.flaticon.com/512/2966/2966481.png">
+
+    </div>
+
+</div>
+
+<!-- CARDS -->
+
+<div class="cards">
+
+    <!-- BOOK SLOT -->
+
+    <div class="card">
+
+        <div class="card-icon">
+
+            BS
+
+        </div>
+
+        <h2>Book Slot</h2>
+
+        <p>
+
+            Book your vaccination slot
+            quickly and securely.
+
+        </p>
+
+        <a href="booking.html">
+
+            <button>
+
+                Book Slot
+
+            </button>
+
+        </a>
+
+    </div>
+
+    <!-- VIEW BOOKING -->
+
+    <div class="card">
+
+        <div class="card-icon">
+
+            VB
+
+        </div>
+
+        <h2>View Booking</h2>
+
+        <p>
+
+            Check your vaccination
+            booking details anytime.
+
+        </p>
+
+        <a href="viewbooking.jsp">
+
+            <button>
+
+                View Booking
+
+            </button>
+
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

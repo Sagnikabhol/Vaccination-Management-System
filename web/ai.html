@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>AI Vaccine Recommendation</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial;
+        }
+
+        body{
+
+            background:
+            linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+            url('https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=1200&auto=format&fit=crop');
+
+            background-size:cover;
+            background-position:center;
+
+            height:100vh;
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+
+        .container{
+
+            width:500px;
+
+            background:rgba(255,255,255,0.15);
+
+            backdrop-filter:blur(12px);
+
+            padding:40px;
+
+            border-radius:20px;
+
+            color:white;
+
+            box-shadow:0 0 20px rgba(0,0,0,0.3);
+        }
+
+        h1{
+
+            text-align:center;
+
+            margin-bottom:30px;
+
+            font-size:36px;
+        }
+
+        input,select{
+
+            width:100%;
+
+            padding:14px;
+
+            margin-bottom:20px;
+
+            border:none;
+
+            border-radius:8px;
+
+            font-size:18px;
+        }
+
+        button{
+
+            width:100%;
+
+            padding:14px;
+
+            border:none;
+
+            border-radius:8px;
+
+            background:#00b4d8;
+
+            color:white;
+
+            font-size:20px;
+
+            cursor:pointer;
+        }
+
+        button:hover{
+
+            background:#0077b6;
+        }
+
+        .result{
+
+            margin-top:20px;
+
+            padding:20px;
+
+            background:white;
+
+            color:#333;
+
+            border-radius:10px;
+
+            display:none;
+
+            line-height:1.8;
+
+            font-size:20px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>AI Vaccine Recommendation</h1>
+
+    <input type="number"
+           id="age"
+           placeholder="Enter Age">
+
+    <select id="condition">
+
+        <option value="">
+            Select Health Condition
+        </option>
+
+        <option value="normal">
+            Normal
+        </option>
+
+        <option value="diabetes">
+            Diabetes
+        </option>
+
+        <option value="heart">
+            Heart Problem
+        </option>
+
+        <option value="asthma">
+            Asthma
+        </option>
+
+    </select>
+
+    <button onclick="recommendVaccine()">
+
+        Get AI Suggestion
+
+    </button>
+
+    <div class="result" id="result">
+
+    </div>
+
+</div>
+
+<script>
+
+function recommendVaccine(){
+
+    let age =
+    document.getElementById("age").value;
+
+    let condition =
+    document.getElementById("condition").value;
+
+    let result =
+    document.getElementById("result");
+
+    let recommendation = "";
+
+    if(age <= 5){
+
+        recommendation =
+
+        "<h3>Recommended Vaccines</h3><br>" +
+
+        "- Polio Vaccine<br>" +
+        "- BCG Vaccine<br>" +
+        "- Hepatitis B Vaccine<br><br>" +
+
+        "Children should complete all primary vaccinations.";
+
+    }
+
+    else if(age > 5 && age <= 18){
+
+        recommendation =
+
+        "<h3>Recommended Vaccines</h3><br>" +
+
+        "- Tetanus Vaccine<br>" +
+        "- MMR Vaccine<br>" +
+        "- HPV Vaccine<br><br>" +
+
+        "Teenagers should maintain vaccination schedules.";
+
+    }
+
+    else if(age > 50){
+
+        recommendation =
+
+        "<h3>Recommended Vaccines</h3><br>" +
+
+        "- Influenza Vaccine<br>" +
+        "- COVID-19 Booster<br><br>" +
+
+        "Senior citizens should consult doctors before vaccination.";
+
+    }
+
+    else if(condition === "diabetes"){
+
+        recommendation =
+
+        "<h3>Recommended Vaccines</h3><br>" +
+
+        "- Hepatitis B Vaccine<br>" +
+        "- Influenza Vaccine<br><br>" +
+
+        "Maintain sugar levels before vaccination.";
+
+    }
+
+    else if(condition === "heart"){
+
+        recommendation =
+
+        "<h3>Recommended Vaccines</h3><br>" +
+
+        "- Influenza Vaccine<br>" +
+        "- COVID-19 Booster<br><br>" +
+
+        "Cardiac patients should take medical advice.";
+
+    }
+
+    else if(condition === "asthma"){
+
+        recommendation =
+
+        "<h3>Recommended Vaccines</h3><br>" +
+
+        "- Influenza Vaccine<br><br>" +
+
+        "Keep inhaler available during vaccination.";
+
+    }
+
+    else{
+
+        recommendation =
+
+        "<h3>Recommended Vaccines</h3><br>" +
+
+        "- Tetanus Vaccine<br>" +
+        "- Influenza Vaccine<br><br>" +
+
+        "You are eligible for standard vaccination.";
+
+    }
+
+    result.style.display = "block";
+
+    result.innerHTML = recommendation;
+}
+
+</script>
+
+</body>
+</html>

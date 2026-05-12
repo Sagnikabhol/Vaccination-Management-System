@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ImmunityPlus</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        body{
+
+            height:100vh;
+
+            background:
+            linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+            url('https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=1200&auto=format&fit=crop');
+
+            background-size:cover;
+            background-position:center;
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+
+        .container{
+
+            width:900px;
+            height:520px;
+
+            background:rgba(255,255,255,0.12);
+
+            backdrop-filter:blur(10px);
+
+            border-radius:20px;
+
+            overflow:hidden;
+
+            display:flex;
+
+            box-shadow:0 0 25px rgba(0,0,0,0.4);
+        }
+
+        .left{
+
+            flex:1;
+
+            color:white;
+
+            padding:60px;
+
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+        }
+
+        .left h1{
+
+            font-size:48px;
+            margin-bottom:20px;
+        }
+
+        .left p{
+
+            font-size:18px;
+            line-height:30px;
+        }
+
+        .right{
+
+            width:380px;
+
+            background:white;
+
+            padding:40px;
+        }
+
+        .tabs{
+
+            display:flex;
+            justify-content:space-between;
+
+            margin-bottom:30px;
+        }
+
+        .tabs button{
+
+            width:48%;
+            padding:12px;
+
+            border:none;
+
+            background:#eaeaea;
+
+            cursor:pointer;
+
+            border-radius:6px;
+
+            font-size:16px;
+            font-weight:bold;
+        }
+
+        .tabs button.active{
+
+            background:#0097b2;
+            color:white;
+        }
+
+        .form-box{
+            display:none;
+        }
+
+        .form-box.active{
+            display:block;
+        }
+
+        .form-box h2{
+
+            text-align:center;
+            margin-bottom:25px;
+            color:#333;
+        }
+
+        input{
+
+            width:100%;
+
+            padding:14px;
+
+            margin-bottom:18px;
+
+            border:1px solid #ccc;
+
+            border-radius:8px;
+
+            font-size:15px;
+        }
+
+        .submit-btn{
+
+            width:100%;
+
+            padding:14px;
+
+            border:none;
+
+            background:#0097b2;
+
+            color:white;
+
+            border-radius:8px;
+
+            font-size:17px;
+            font-weight:bold;
+
+            cursor:pointer;
+
+            transition:0.3s;
+        }
+
+        .submit-btn:hover{
+
+            background:#006b80;
+        }
+
+        .footer-text{
+
+            margin-top:20px;
+            text-align:center;
+            color:gray;
+            font-size:14px;
+        }
+
+        @media(max-width:900px){
+
+            .container{
+                width:95%;
+                flex-direction:column;
+                height:auto;
+            }
+
+            .left{
+                padding:40px;
+            }
+
+            .right{
+                width:100%;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="left">
+
+        <h1>ImmunityPlus</h1>
+
+        <p>
+            Smart Vaccination Management System for secure registration,
+            user login, and vaccination booking.
+        </p>
+
+    </div>
+
+    <div class="right">
+
+        <div class="tabs">
+
+            <button class="active" onclick="showLogin()" id="loginBtn">
+                Login
+            </button>
+
+            <button onclick="showRegister()" id="registerBtn">
+                Register
+            </button>
+
+        </div>
+
+        <div class="form-box active" id="loginForm">
+
+            <h2>User Login</h2>
+
+            <form action="login" method="post">
+
+                <input type="email"
+                       name="email"
+                       placeholder="Enter Email"
+                       required>
+
+                <input type="password"
+                       name="password"
+                       placeholder="Enter Password"
+                       required>
+
+                <button type="submit" class="submit-btn">
+                    Login
+                </button>
+
+            </form>
+
+        </div>
+
+        <div class="form-box" id="registerForm">
+
+            <h2>Create Account</h2>
+
+            <form action="register" method="post">
+
+                <input type="text"
+                       name="fullname"
+                       placeholder="Full Name"
+                       required>
+
+                <input type="email"
+                       name="email"
+                       placeholder="Enter Email"
+                       required>
+
+                <input type="password"
+                       name="password"
+                       placeholder="Create Password"
+                       required>
+
+                <button type="submit" class="submit-btn">
+                    Register
+                </button>
+
+            </form>
+
+        </div>
+
+        <div class="footer-text">
+            Stay Safe • Stay Vaccinated
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+    function showLogin(){
+
+        document.getElementById('loginForm').classList.add('active');
+        document.getElementById('registerForm').classList.remove('active');
+
+        document.getElementById('loginBtn').classList.add('active');
+        document.getElementById('registerBtn').classList.remove('active');
+    }
+
+    function showRegister(){
+
+        document.getElementById('registerForm').classList.add('active');
+        document.getElementById('loginForm').classList.remove('active');
+
+        document.getElementById('registerBtn').classList.add('active');
+        document.getElementById('loginBtn').classList.remove('active');
+    }
+
+</script>
+
+</body>
+</html>

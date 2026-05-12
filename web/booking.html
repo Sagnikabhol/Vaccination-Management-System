@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Book Vaccination</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial;
+}
+
+body{
+
+    background:
+    linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+    url('https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?q=80&w=1200&auto=format&fit=crop');
+
+    background-size:cover;
+    background-position:center;
+
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.form-box{
+
+    width:450px;
+
+    background:rgba(255,255,255,0.15);
+
+    backdrop-filter:blur(12px);
+
+    padding:40px;
+
+    border-radius:20px;
+
+    color:white;
+
+    box-shadow:0 0 20px rgba(0,0,0,0.3);
+}
+
+h1{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+input,select{
+
+    width:100%;
+
+    padding:14px;
+
+    margin-bottom:20px;
+
+    border:none;
+
+    border-radius:8px;
+
+    font-size:16px;
+}
+
+button{
+
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#00b4d8;
+
+    color:white;
+
+    font-size:18px;
+
+    cursor:pointer;
+}
+
+button:hover{
+    background:#0077b6;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="form-box">
+
+    <h1>General Vaccination Booking</h1>
+
+    <form action="booking" method="post">
+
+        <input type="text"
+               name="fullname"
+               placeholder="Enter Full Name"
+               required>
+
+        <input type="number"
+               name="age"
+               placeholder="Enter Age"
+               required>
+
+        <select name="vaccine" required>
+
+            <option value="">
+                Select Vaccine
+            </option>
+<option value="BCG">BCG</option>
+
+<option value="Polio">Polio</option>
+
+<option value="Hepatitis B">Hepatitis B</option>
+
+<option value="MMR">MMR</option>
+
+<option value="Tetanus">Tetanus</option>
+
+<option value="Influenza">Influenza</option>
+
+<option value="HPV">HPV</option>
+
+<option value="COVID-19">COVID-19</option>
+
+        </select>
+
+        <input type="text"
+               name="hospital"
+               placeholder="Hospital Name"
+               required>
+
+        <input type="date"
+               name="booking_date"
+               required>
+
+        <button type="submit">
+            Book Slot
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
